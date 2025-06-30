@@ -1,0 +1,124 @@
+/* Estilos para o FullCalendar */
+.calendar-container .fc {
+  --fc-border-color: #e2e8f0;
+  --fc-button-bg-color: #3b82f6;
+  --fc-button-border-color: #3b82f6;
+  --fc-button-hover-bg-color: #2563eb;
+  --fc-button-hover-border-color: #2563eb;
+  --fc-button-active-bg-color: #1d4ed8;
+  --fc-button-active-border-color: #1d4ed8;
+  --fc-event-bg-color: #3b82f6;
+  --fc-event-border-color: #3b82f6;
+  --fc-today-bg-color: rgba(219, 234, 254, 0.4);
+  --fc-neutral-bg-color: #ffffff;
+  --fc-page-bg-color: #ffffff;
+  --fc-list-event-hover-bg-color: #f1f5f9;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+/* Cabeçalho do calendário */
+.calendar-container .fc .fc-toolbar {
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.calendar-container .fc .fc-toolbar-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Botões do calendário */
+.calendar-container .fc .fc-button {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  text-transform: capitalize;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+}
+
+.calendar-container .fc .fc-button:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  outline: none;
+}
+
+.calendar-container .fc .fc-button-primary:not(:disabled).fc-button-active,
+.calendar-container .fc .fc-button-primary:not(:disabled):active {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Células do calendário */
+.calendar-container .fc .fc-daygrid-day {
+  transition: background-color 0.15s ease;
+}
+
+.calendar-container .fc .fc-daygrid-day:hover {
+  background-color: #f8fafc;
+}
+
+.calendar-container .fc .fc-col-header-cell {
+  padding: 0.75rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Eventos */
+.calendar-container .fc-event {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: transform 0.1s ease;
+}
+
+.calendar-container .fc-event:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.calendar-container .fc-event-main {
+  padding: 0.125rem 0;
+}
+
+/* Visualização de semana/dia */
+.calendar-container .fc-timegrid-event {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.calendar-container .fc-timegrid-slot {
+  height: 3rem;
+}
+
+.calendar-container .fc-timegrid-slot-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  vertical-align: middle;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .calendar-container .fc .fc-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendar-container .fc .fc-toolbar-chunk {
+    margin-bottom: 0.5rem;
+  }
+
+  .calendar-container .fc .fc-button {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
