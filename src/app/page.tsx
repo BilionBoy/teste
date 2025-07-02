@@ -554,7 +554,6 @@ export default function Home() {
             <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 h-32 sm:w-64 sm:h-64 bg-[#315892]/5 rounded-full blur-2xl sm:blur-3xl"></div>
             <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-40 h-40 sm:w-80 sm:h-80 bg-[#FED22F]/5 rounded-full blur-2xl sm:blur-3xl"></div>
           </div>
-
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Header da Seção com Hierarquia Visual */}
             <div className="text-center mb-8 sm:mb-12 lg:mb-20">
@@ -571,9 +570,10 @@ export default function Home() {
             {/* Cards Responsivos com Scroll Horizontal */}
             <div className="block lg:hidden">
               <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 px-2 snap-x snap-mandatory scrollbar-hide">
+                {" "}
                 {/* Feature 1 Mobile */}
-                <Card className="min-w-[260px] sm:min-w-[300px] flex-shrink-0 snap-center hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-4 sm:p-6 text-center">
+                <Card className="min-w-[280px] sm:min-w-[320px] flex-shrink-0 snap-center hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
+                  <CardContent className="px-4 py-4 sm:px-6 sm:py-6 text-center">
                     <div className="relative mb-4 sm:mb-6">
                       <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#315892] to-[#005BA8] rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto shadow-2xl">
                         <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
@@ -589,22 +589,15 @@ export default function Home() {
                       Calendário Inteligente
                     </h3>
 
-                    <p className="text-sm font-semibold text-gray-700 leading-relaxed mb-3 sm:mb-4">
-                      Interface moderna e intuitiva que adapta-se ao seu fluxo
-                      de trabalho, com visualização clara de todos os
-                      compromissos
-                    </p>
-
                     <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-[#315892]">
                       <Zap className="h-3 w-3 sm:h-4 sm:w-4" />
                       <span>Rápido & Eficiente</span>
                     </div>
                   </CardContent>
                 </Card>
-
                 {/* Feature 2 Mobile */}
-                <Card className="min-w-[260px] sm:min-w-[300px] flex-shrink-0 snap-center hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-4 sm:p-6 text-center">
+                <Card className="min-w-[280px] sm:min-w-[320px] flex-shrink-0 snap-center hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
+                  <CardContent className="px-4 py-4 sm:px-6 sm:py-6 text-center">
                     <div className="relative mb-4 sm:mb-6">
                       <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#20B04B] to-[#16a34a] rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto shadow-2xl">
                         <Bell className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
@@ -620,21 +613,15 @@ export default function Home() {
                       Notificações Inteligentes
                     </h3>
 
-                    <p className="text-sm font-semibold text-gray-700 leading-relaxed mb-3 sm:mb-4">
-                      Sistema avançado de lembretes que garante que você nunca
-                      perca uma reunião importante ou compromisso crítico
-                    </p>
-
                     <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-[#20B04B]">
                       <Bell className="h-3 w-3 sm:h-4 sm:w-4" />
                       <span>Sempre Conectado</span>
                     </div>
                   </CardContent>
                 </Card>
-
                 {/* Feature 3 Mobile */}
-                <Card className="min-w-[260px] sm:min-w-[300px] flex-shrink-0 snap-center hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-4 sm:p-6 text-center">
+                <Card className="min-w-[280px] sm:min-w-[320px] flex-shrink-0 snap-center hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
+                  <CardContent className="px-4 py-4 sm:px-6 sm:py-6 text-center">
                     <div className="relative mb-4 sm:mb-6">
                       <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#FCB240] to-[#FED22F] rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto shadow-2xl">
                         <Users className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
@@ -647,11 +634,6 @@ export default function Home() {
                     <h3 className="text-lg sm:text-xl font-black text-[#315892] mb-3 sm:mb-4 tracking-tight font-sans">
                       Colaboração Avançada
                     </h3>
-
-                    <p className="text-sm font-semibold text-gray-700 leading-relaxed mb-3 sm:mb-4">
-                      Compartilhe agendas, coordene reuniões em equipe e
-                      sincronize compromissos com colegas de forma seamless
-                    </p>
 
                     <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-[#FCB240]">
                       <Users className="h-3 w-3 sm:h-4 sm:w-4" />

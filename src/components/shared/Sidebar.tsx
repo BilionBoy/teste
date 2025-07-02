@@ -22,11 +22,17 @@ export default function SidebarEvents({ recentEvents }: SidebarProps) {
         <section className="space-y-5">
           {/* Header com Hierarquia Tipográfica Clara */}
           <header className="flex items-center gap-3 pb-1">
-            <div className="flex items-center justify-center w-8 h-8 bg-emerald-50 border border-emerald-100 rounded-lg">
-              <BarChart3 className="w-4 h-4 text-emerald-600" />
+            <div
+              className="flex items-center justify-center w-8 h-8 rounded-lg"
+              style={{ backgroundColor: "#E6F5EC" }}
+            >
+              <BarChart3 className="w-4 h-4" style={{ color: "#20B04B" }} />
             </div>
-            <h2 className="text-base font-semibold text-slate-900 tracking-[-0.01em] leading-none">
-              Estatísticas
+            <h2
+              className="text-base font-semibold tracking-[-0.01em] leading-none"
+              style={{ color: "#1C3A2C" }}
+            >
+              Agendamentos
             </h2>
           </header>
 
@@ -35,17 +41,26 @@ export default function SidebarEvents({ recentEvents }: SidebarProps) {
             {/* Card Eventos Recentes - Sistema de Bordas Consistente */}
             <div className="group relative">
               {/* Glow Effect Layer */}
-              <div className="absolute -inset-px bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl opacity-0 group-hover:opacity-60 transition-opacity duration-300 blur-sm" />
+              <div className="absolute -inset-px bg-gradient-to-br   rounded-xl " />
 
               {/* Main Card */}
-              <div className="relative bg-white border border-slate-200/80 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-emerald-200/80">
+              <div className="relative bg-white border border-slate-200/80 rounded-xl p-5 shadow-sm hover:shadow-md">
                 {/* Card Header - Alinhamento Óptico */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="text-2xl font-bold text-emerald-600 leading-none tabular-nums">
+                  <div
+                    className="text-2xl font-bold leading-none tabular-nums"
+                    style={{ color: "#20B04B" }}
+                  >
                     {recentEvents.length}
                   </div>
-                  <div className="flex items-center justify-center w-7 h-7 bg-emerald-50 rounded-lg">
-                    <FileText className="w-3.5 h-3.5 text-emerald-500" />
+                  <div
+                    className="flex items-center justify-center w-7 h-7 rounded-lg"
+                    style={{ backgroundColor: "#E6F5EC" }}
+                  >
+                    <FileText
+                      className="w-3.5 h-3.5"
+                      style={{ color: "#20B04B" }}
+                    />
                   </div>
                 </div>
 
@@ -60,24 +75,27 @@ export default function SidebarEvents({ recentEvents }: SidebarProps) {
                 </div>
 
                 {/* Visual Indicator - Proporção Áurea */}
-                <div className="mt-4 h-1 bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full opacity-80" />
+                <div
+                  className="mt-4 h-1 rounded-full opacity-80"
+                  style={{
+                    background: "linear-gradient(to right, #20B04B, #1DA347)",
+                  }}
+                />
               </div>
             </div>
 
             {/* Card Próximos Eventos - Consistência Visual */}
             <div className="group relative">
-              {/* Glow Effect Layer */}
-              <div className="absolute -inset-px bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl opacity-0 group-hover:opacity-60 transition-opacity duration-300 blur-sm" />
-
-              {/* Main Card */}
-              <div className="relative bg-white border border-slate-200/80 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-200/80">
-                {/* Card Header */}
+              <div
+                className="relative bg-white border border-slate-200/80 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 "
+                style={{ color: "#30558d" }}
+              >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="text-2xl font-bold text-blue-600 leading-none tabular-nums">
+                  <div className="text-2xl font-boldleading-none tabular-nums">
                     {getUpcomingEventsCount(recentEvents)}
                   </div>
                   <div className="flex items-center justify-center w-7 h-7 bg-blue-50 rounded-lg">
-                    <TrendingUp className="w-3.5 h-3.5 text-blue-500" />
+                    <TrendingUp className="w-3.5 h-3.5" />
                   </div>
                 </div>
 
@@ -98,9 +116,7 @@ export default function SidebarEvents({ recentEvents }: SidebarProps) {
           </div>
         </section>
 
-        {/* Events Section - Aplicando Princípios de Proximidade */}
         <section className="space-y-5">
-          {/* Header Consistente */}
           <header className="flex items-center gap-3 pb-1">
             <div className="flex items-center justify-center w-8 h-8 bg-blue-50 border border-blue-100 rounded-lg">
               <Calendar className="w-4 h-4 text-blue-600" />
@@ -179,10 +195,10 @@ export default function SidebarEvents({ recentEvents }: SidebarProps) {
                     <Calendar className="w-5 h-5 text-slate-400" />
                   </div>
                   <h3 className="text-sm font-semibold text-slate-700 mb-1">
-                    Nenhum evento recente
+                    Nenhum evento por enquanto 🗓️
                   </h3>
                   <p className="text-xs text-slate-500 leading-relaxed max-w-[180px] mx-auto">
-                    Os eventos da agenda aparecerão aqui quando criados
+                    Que tal criar o primeiro?{" "}
                   </p>
                 </div>
               </div>

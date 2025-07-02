@@ -75,9 +75,9 @@ export function FullCalendarWrapper({
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         headerToolbar={{
-          left: "prev,next today",
-          center: "title",
-          right: "dayGridMonth,timeGridWeek,timeGridDay",
+          left: "dayGridMonth,timeGridWeek,timeGridDay prev,next",
+          center: "today",
+          right: "title",
         }}
         buttonText={{
           today: "Hoje",
@@ -132,12 +132,20 @@ export function FullCalendarWrapper({
         slotMinTime="06:00:00"
         slotMaxTime="22:00:00"
         businessHours={{
-          daysOfWeek: [1, 2, 3, 4, 5], // Segunda a sexta
+          daysOfWeek: [1, 2, 3, 4, 5], //
           startTime: "08:00",
           endTime: "18:00",
         }}
         eventDisplay="block"
-        dayHeaderFormat={{ weekday: "short", day: "numeric" }}
+        dayHeaderFormat={{ weekday: "short" }}
+        moreLinkContent={(args) => (
+          <span
+            className="bg-blue-500 text-white text-xs rounded-full px-2 py-0.5 font-medium shadow-md"
+            style={{ display: "inline-block", marginTop: "2px" }}
+          >
+            +{args.num}
+          </span>
+        )}
       />
       <motion.button
         className="add-event-button"

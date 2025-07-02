@@ -6,12 +6,9 @@ import type { EventType } from "@/lib/types";
 import { useSidebar } from "@/components/ui/sidebar";
 import type { EventDropArg } from "@fullcalendar/core";
 
-// Dynamically import FullCalendar with no SSR
 const FullCalendarComponent = dynamic(
   () => import("./FullCalendarWrapper").then((mod) => mod.FullCalendarWrapper),
-  {
-    ssr: false,
-  }
+  { ssr: false }
 );
 
 interface CalendarProps {
@@ -39,7 +36,6 @@ export default function CalendarComponent({
 
   // Efeito para redimensionar o calendário quando o estado da sidebar mudar
   useEffect(() => {
-    // Pequeno atraso para garantir que a transição da sidebar tenha terminado
     const timer = setTimeout(() => {
       window.dispatchEvent(new Event("resize-calendar"));
     }, 300);
@@ -48,11 +44,10 @@ export default function CalendarComponent({
   }, [state]);
 
   return (
-    // Usar calendar-container para garantir que o calendário ocupe todo o espaço disponível
     <div className="calendar-container">
       <div
         ref={calendarRef}
-        className="rounded-xl overflow-hidden shadow-lg flex-1 flex flex-col h-full w-full transition-all duration-300"
+        className="rounded-xl overflow-hidden shadow-lg flex-1 flex flex-col h-[80vh] w-full max-w-full transition-all duration-300"
       >
         {isMounted && (
           <FullCalendarComponent
@@ -64,17 +59,6 @@ export default function CalendarComponent({
           />
         )}
       </div>
-      <style jsx global>{`
-        .fc-day-sat,
-        .fc-day-sun {
-          background-color: #fff5f5;
-        }
-
-        .fc-day-disabled {
-          background-color: #f9fafb;
-          opacity: 0.6;
-        }
-      `}</style>
     </div>
   );
 }

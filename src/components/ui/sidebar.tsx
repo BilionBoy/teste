@@ -273,7 +273,7 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      <AlignJustify className="text-primary" />
+      <AlignJustify style={{ color: "#315892" }} />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );

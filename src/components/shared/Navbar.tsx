@@ -13,7 +13,6 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 interface NavbarProps {
   pendingEventsCount: number;
@@ -41,13 +40,6 @@ export default function Navbar({
 
           <div className="flex items-center relative group">
             <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm" />
-            <Image
-              src="/Governo-Ro.png"
-              alt="Logo do Governo"
-              width={100}
-              height={32}
-              className="object-contain md:w-[120px] md:h-[40px] relative z-10 transition-transform duration-300 group-hover:scale-105"
-            />
           </div>
         </div>
 

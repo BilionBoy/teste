@@ -5,6 +5,7 @@ import DashboardLayout from "@/components/layouts/DashboardLayout";
 import CalendarSection from "@/components/calendario/CalendarSection";
 import { useEvents } from "@/hooks/useEventos";
 import { useFilters } from "@/hooks/useFiltros";
+import SkeletonCalendar from "@/components/calendario/SkeletonCalendar";
 
 export default function HomePage() {
   const {
@@ -34,7 +35,6 @@ export default function HomePage() {
   const [isApprovalSheetOpen, setIsApprovalSheetOpen] = useState(false);
 
   const filteredEvents = getFilteredEvents(events);
-
   return (
     <DashboardLayout
       title="Calendário de Eventos"
@@ -47,23 +47,27 @@ export default function HomePage() {
       onRejectEvent={handleRejectEvent}
       sidebarDefaultOpen={true}
     >
-      <CalendarSection
-        events={events}
-        loading={loading}
-        error={error}
-        organizations={organizations}
-        locations={locations}
-        environments={environments}
-        users={users}
-        targetAudiences={targetAudiences}
-        filters={filters}
-        filteredEvents={filteredEvents}
-        onFilterChange={handleFilterChange}
-        onAddEvent={handleAddEvent}
-        onDeleteEvent={handleDeleteEvent}
-        onEventDrop={handleEventDrop}
-        onRefresh={refreshEvents}
-      />
+      {loading ? (
+        <SkeletonCalendar />
+      ) : (
+        <CalendarSection
+          events={events}
+          loading={loading}
+          error={error}
+          organizations={organizations}
+          locations={locations}
+          environments={environments}
+          users={users}
+          targetAudiences={targetAudiences}
+          filters={filters}
+          filteredEvents={filteredEvents}
+          onFilterChange={handleFilterChange}
+          onAddEvent={handleAddEvent}
+          onDeleteEvent={handleDeleteEvent}
+          onEventDrop={handleEventDrop}
+          onRefresh={refreshEvents}
+        />
+      )}
     </DashboardLayout>
   );
 }

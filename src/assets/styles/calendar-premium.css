@@ -1,16 +1,16 @@
 /* Estilos Premium para o FullCalendar - Inspirado no Able Pro */
 
 :root {
-  --fc-primary-color: #4680ff;
+  --fc-primary-color: #30558d;
   --fc-secondary-color: #f4f7fa;
   --fc-neutral-bg-color: #ffffff;
   --fc-border-color: #eaeef5;
   --fc-today-bg-color: #f0f7ff;
   --fc-event-border-radius: 6px;
-  --fc-button-active-bg-color: #3868cc;
-  --fc-button-active-border-color: #3868cc;
-  --fc-button-hover-bg-color: #3868cc;
-  --fc-button-hover-border-color: #3868cc;
+  --fc-button-active-bg-color: #30558d;
+  --fc-button-active-border-color: #30558d;
+  --fc-button-hover-bg-color: #30558d;
+  --fc-button-hover-border-color: #30558d;
   --fc-event-selected-overlay-color: rgba(70, 128, 255, 0.2);
   --fc-page-bg-color: #ffffff;
   --fc-list-event-hover-bg-color: #f4f7fa;
@@ -112,8 +112,8 @@
 
 .calendar-premium .fc .fc-button-primary:not(:disabled).fc-button-active,
 .calendar-premium .fc .fc-button-primary:not(:disabled):active {
-  background-color: var(--fc-view-button-active-bg);
-  border-color: var(--fc-view-button-active-bg);
+  background-color: #315892;
+  border-color: #315892;
   color: var(--fc-view-button-active-text);
   box-shadow: none;
 }
@@ -130,8 +130,8 @@
 }
 
 .calendar-premium .fc .fc-today-button:disabled {
-  background-color: rgba(70, 128, 255, 0.7);
-  border-color: rgba(70, 128, 255, 0.7);
+  background-color: #315892;
+  border-color: #315892;
   color: white;
   opacity: 0.65;
 }
@@ -301,7 +301,6 @@
 
 /* Cores de eventos */
 .calendar-premium .event-blue {
-  background-color: #4680ff;
   color: white;
 }
 
@@ -361,31 +360,34 @@
   height: 24px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .calendar-premium .fc .fc-toolbar {
     flex-direction: column;
     align-items: flex-start;
-    height: auto;
     padding: 12px 16px;
+    gap: 8px;
   }
 
   .calendar-premium .fc .fc-toolbar-chunk {
-    margin-bottom: 8px;
     width: 100%;
   }
 
-  .calendar-premium .fc .fc-toolbar-chunk:last-child {
+  /* Alinha o grupo dos botões (lado a lado) */
+  .calendar-premium .fc .fc-toolbar-chunk:first-child {
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     justify-content: flex-start;
-    margin-bottom: 0;
   }
 
+  /* Garante que botões tenham tamanho adequado */
   .calendar-premium .fc .fc-button {
-    padding: 0.375rem 0.75rem;
     font-size: 0.8125rem;
+    padding: 0.375rem 0.75rem;
+    white-space: nowrap;
   }
 
+  /* Tamanho da data e eventos */
   .calendar-premium .fc .fc-daygrid-day-number {
     font-size: 0.8125rem;
     width: 24px;
